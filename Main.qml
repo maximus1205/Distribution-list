@@ -19,6 +19,7 @@ Window {
     property bool isrun: false;
     property int inx: 0;
     property int inx2: 0;
+    property int count: 0;
 
     flags: Qt.FramelessWindowHint | Qt.Window
 
@@ -81,6 +82,8 @@ Window {
                     rectanglezxc.visible = false;
                     textArea.visible = true;
                     smtp.addEmail(textFieldzxc.text);
+                    count++;
+                    textFieldzxc.text = "";
                 }
             }
         }
@@ -449,6 +452,11 @@ Window {
                 to: 1;
                 easing.type: Easing.InOutQuad
                 running: isrun;
+            }
+            onReleased: {
+                listmodel1.remove(count - 1);
+                smtp.removeEmail(count - 1);
+                count--;
             }
         }
 

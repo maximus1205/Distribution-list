@@ -14,6 +14,7 @@ public:
 public slots:
     void connect(QString login, QString password, QString server, QString port);
     void addEmail(QString email);
+    void removeEmail(int email);
     void send(QString msg, QString subject);
     void addFile(QString file);
     QString deleteF(QString file);

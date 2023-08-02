@@ -28,6 +28,11 @@ void smtpupr::addEmail(QString email)
 
 }
 
+void smtpupr::removeEmail(int email)
+{
+    list.remove(email);
+}
+
 QString smtpupr::deleteF(QString file)
 {
     file.remove("file:///");
